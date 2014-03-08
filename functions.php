@@ -171,9 +171,9 @@ add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_close', 
  **/
 function lc_infinite_scroll_init() {
  add_theme_support( 'infinite-scroll', array(
- 'container' =&gt; 'content',
- 'footer' =&gt; 'footer',
- 'render' =&gt; 'genesis_do_loop'
+ 'container' => 'content',
+ 'footer' => 'footer',
+ 'render' => 'genesis_do_loop'
  ) );
 }
 add_action( 'after_setup_theme', 'lc_infinite_scroll_init' );
