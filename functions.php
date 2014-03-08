@@ -132,27 +132,7 @@ genesis_register_sidebar( array(
 
 
 
-remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
-remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
-add_action( 'genesis_site_title', 'child_seo_site_title' );
-/**
- * Remove title, add <span> inbetween Buzz.
- * Then add title back to header.
- *
- * @author Greg Rickaby
- * @since 1.0.0
- */
-function child_seo_site_title() { 
 
-$email = "valentmustamin@yahoo.com";
-	$size = 96;
-	//$default = "http://example.com/path/to/example/image.jpg";
-	$gravatar = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
-	echo '<img src="' . $gravatar . '" />';	
-	echo '<br><br><h2>Valent Mustamin</h2>';
-	echo 'Personal Blog';
-
-}
 
 
 
