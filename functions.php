@@ -158,7 +158,7 @@ remove_action( 'genesis_footer', 'genesis_do_footer' );
 remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
  
 // Move footer into content-sidebar-wrap
-add_action( 'genesis_before_sidebar_widget_area', 'genesis_footer_markup_open', 5 );
-add_action( 'genesis_before_sidebar_widget_area', 'genesis_do_footer' );
-add_action( 'genesis_before_sidebar_widget_area', 'genesis_footer_markup_close', 15 );
+add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_open', 5 );
+add_action( 'genesis_after_sidebar_widget_area', 'genesis_do_footer' );
+add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_close', 15 );
 
