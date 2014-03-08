@@ -148,7 +148,7 @@ remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
  
 // Move header into into content-sidebar-wrap
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_header_markup_open', 5 );
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_do_header' );
-add_action( 'genesis_before_content_sidebar_wrap', 'genesis_header_markup_close', 15 );
+add_action( 'genesis_before_sidebar_widget_area', 'genesis_header_markup_open', 5 );
+add_action( 'genesis_before_sidebar_widget_area', 'genesis_do_header' );
+add_action( 'genesis_before_sidebar_widget_area', 'genesis_header_markup_close', 15 );
 
