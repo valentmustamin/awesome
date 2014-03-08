@@ -166,26 +166,63 @@ add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_open', 5
 add_action( 'genesis_after_sidebar_widget_area', 'genesis_do_footer' );
 add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_close', 15 );
 
-/**
- * Add support for JetPack infinite scroll
- **/
- 
-/**
- * Add a CSS ID to main element
- **/
-add_filter( 'genesis_attr_content', 'lc_custom_attributes_content' );
-function lc_custom_attributes_content( $attributes ) {
-	$attributes['id'] = 'main-content';
-	return $attributes;
- 
-} 
- 
-function lc_infinite_scroll_init() {
- add_theme_support( 'infinite-scroll', array(
- 'container' => 'content',
- 'footer' => 'footer',
- 'render' => 'genesis_do_loop'
- ) );
-}
-add_action( 'after_setup_theme', 'lc_infinite_scroll_init' );
 
+
+
+
+
+
+
+/*
+To add Infinite Loop Module provided in Jetpack wordpress Plugin, in Genesis driven site.
+*/
+
+/*
+Step 1. Install Jetpack Plugin
+*/
+
+/*
+Step 2. Make your theme ready for Infinite Scroll
+
+We will need to put an 'ID' inside the main posts container which by default in HTML5 contains only class.
+Thanks to @GaryJ (Gary Jones), you can do that by filtering genesis_attr_content as shown below.
+*/
+
+add_filter( 'genesis_attr_content', 'custom_attributes_content' );
+
+function custom_attributes_content( $attributes ) {
+  $attributes['id']     = 'main-content-area';
+  return $attributes;
+}
+
+/*
+Step 3. Make your theme compatible for Infinite Scroll
+
+We will put the following code, to show the Infinite Scroll module about how and which element to repeat, 
+depending on what user interaction and to repeat what chunk of code while repeating the element.
+*/
+
+function custom_infinite_scroll() {
+
+  add_theme_support( 'infinite-scroll', array(
+      'container'  => 'main-content-area',
+      'footer'     => false,
+      'type'       => 'click',
+      'render'    => 'genesis_do_loop',
+  ) );
+}
+
+add_action( 'after_setup_theme', 'custom_infinite_scroll' );
+
+/*
+Refer to http://jetpack.me/support/infinite-scroll/ for the description on attributes that we provided here. 
+The main catch is 'container' which tells Infinite Loop to repeat 'ID' which is 'main-content-area'; 'type' - which tells 
+Infinite loop that it should work when user clicks a load more (or Older Posts) button and 'render' where we proud genesis
+users tell the Infinite Loop to use 'genesis_do_loop' to load more posts.
+*/
+
+/*
+Step 4. Save the functions.php and refresh your site, if you still don't see the Infinite Loop in action,
+then go to dashboard -> Jetpack and look for Infinite Loop module and activate it.
+You will now have a working Infinite Loop in action!
+*/
