@@ -143,15 +143,3 @@ genesis_register_sidebar( array(
     'name'         	 	=> __( 'Header Left', 'wpsitesdotnet' ),
     'description'  	=> __( 'Header left widget area', 'wpsitesdotnet' ),
 ) );
-
-add_action( 'genesis_header', 'wpsites_left_header_widget', 11 );
-	function wpsites_left_header_widget() {
-	if (is_active_sidebar( 'header-left' ) ) {
- 	genesis_widget_area( 'header-left', array(
-       'before' => '<div class="header-left widget-area">',
-       'after'	 => '</div>',
-		) ); 
-
-  }
-
-}
