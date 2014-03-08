@@ -130,3 +130,12 @@ genesis_register_sidebar( array(
 	'description'	=> __( 'This is the third column of the home middle section.', 'equilibre' ),
 ) );
 
+
+/** Remove Header */
+remove_action( 'genesis_header', 'genesis_do_header' );
+
+/** Remove Title & Description */
+remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+
+
