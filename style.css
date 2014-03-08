@@ -673,7 +673,9 @@ img.alignright,
 .entry-title {
 	font-size: 42px;
 	font-size: 4.2rem;
+	font-weight: bold;
 	line-height: 1;
+	color: #dd7733;
 }
 
 .entry-title a:hover {
