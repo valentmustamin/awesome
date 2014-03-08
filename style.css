@@ -175,7 +175,7 @@ textarea:focus,
 }
 
 a {
-	color: #dd7733;
+	color: #000000;
 	text-decoration: none;
 }
 
@@ -185,7 +185,7 @@ a img {
 }
 
 a:hover {
-	color: #000000;
+	color: #dd7733;
 }
 
 p {
