@@ -159,8 +159,3 @@ add_action( 'genesis_after_content', 'genesis_footer_markup_open', 5 );
 add_action( 'genesis_after_content', 'genesis_do_footer' );
 add_action( 'genesis_after_content', 'genesis_footer_markup_close', 15 );
 
-// Move footer widget into content-sidebar-wrap above new footer
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_after_content', 'genesis_footer_widget_areas', 4 );
-
-
