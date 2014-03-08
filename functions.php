@@ -138,4 +138,18 @@ remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
 remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-
+//* Add Jetpack share buttons above post
+remove_filter( 'the_content', 'sharing_display', 19 );
+remove_filter( 'the_excerpt', 'sharing_display', 19 );
+ 
+add_filter( 'the_content', 'share_buttons_above_post', 19 );
+add_filter( 'the_excerpt', 'share_buttons_above_post', 19 );
+ 
+function share_buttons_above_post( $content = '' ) {
+	if ( function_exists( 'sharing_display' ) ) {
+		return sharing_display() . $content;
+	}
+	else {
+		return $content;
+	}
+}
