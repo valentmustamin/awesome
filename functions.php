@@ -169,6 +169,17 @@ add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_close', 
 /**
  * Add support for JetPack infinite scroll
  **/
+ 
+/**
+ * Add a CSS ID to main element
+ **/
+add_filter( 'genesis_attr_content', 'lc_custom_attributes_content' );
+function lc_custom_attributes_content( $attributes ) {
+	$attributes['id'] = 'main-content';
+	return $attributes;
+ 
+} 
+ 
 function lc_infinite_scroll_init() {
  add_theme_support( 'infinite-scroll', array(
  'container' => 'content',
