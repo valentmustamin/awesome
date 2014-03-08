@@ -148,7 +148,7 @@ $email = "valentmustamin@yahoo.com";
 	//$default = "http://example.com/path/to/example/image.jpg";
 	$gravatar = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
 	echo '<img src="' . $gravatar . '" />';	
-	echo '<br><h1 id="title">Valent Mustamin</h1>';
+	echo '<br><br><h1 id="title">Valent Mustamin</h1>';
 
 }
 
