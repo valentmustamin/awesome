@@ -133,19 +133,15 @@ genesis_register_sidebar( array(
 
 
 // Force sidebar-content-sidebar layout setting
-add_filter( 'genesis_site_layout', '__genesis_return_sidebar_content_sidebar' );
+add_filter( 'genesis_site_layout', '__genesis_return_sidebar_content' );
  
 // Unregister layout settings
-genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'content-sidebar' );
 genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 genesis_unregister_layout( 'full-width-content' );
  
-// Unregister and remove markup for sidebar-primary
-unregister_sidebar( 'sidebar' );
-remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
-
 //Remove the header from normal location
 remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
