@@ -133,6 +133,7 @@ genesis_register_sidebar( array(
 
 
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 add_action( 'genesis_site_title', 'child_seo_site_title' );
 /**
  * Remove title, add <span> inbetween Buzz.
@@ -148,7 +149,8 @@ $email = "valentmustamin@yahoo.com";
 	//$default = "http://example.com/path/to/example/image.jpg";
 	$gravatar = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
 	echo '<img src="' . $gravatar . '" />';	
-	echo '<br><br><br>Valent Mustamin<br>';
+	echo '<br><br><strong>Valent Mustamin</strong><br>';
+	echo 'Personal Blog';
 
 }
 
