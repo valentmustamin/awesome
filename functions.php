@@ -186,3 +186,12 @@ add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_open', 5
 add_action( 'genesis_after_sidebar_widget_area', 'genesis_do_footer' );
 add_action( 'genesis_after_sidebar_widget_area', 'genesis_footer_markup_close', 15 );
 
+add_theme_support( 'infinite-scroll', array(
+  'type' => 'scroll',
+  'container' => 'content',
+  'footer' => 'inner',
+  'render' => 'genesis_do_loop'
+) );
+
+
+
