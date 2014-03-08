@@ -135,11 +135,15 @@ genesis_register_sidebar( array(
 //remove_action( 'genesis_header', 'genesis_do_header' );
 
 /** Remove Title & Description */
-remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
-remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+//remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+//remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
 
-genesis_register_sidebar( array(
-    'id'              		=> 'header-left',
-    'name'         	 	=> __( 'Header Left', 'wpsitesdotnet' ),
-    'description'  	=> __( 'Header left widget area', 'wpsitesdotnet' ),
-) );
+//Remove the header from normal location
+remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
+remove_action( 'genesis_header', 'genesis_do_header' );
+remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
+
+// Move header into into content-sidebar-wrap
+add_action( 'genesis_before_content', 'genesis_header_markup_open', 5 );
+add_action( 'genesis_before_content', 'genesis_do_header' );
+add_action( 'genesis_before_content', 'genesis_header_markup_close', 15 );
