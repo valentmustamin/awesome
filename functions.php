@@ -149,13 +149,3 @@ add_action( 'genesis_before_content', 'genesis_header_markup_open', 5 );
 add_action( 'genesis_before_content', 'genesis_do_header' );
 add_action( 'genesis_before_content', 'genesis_header_markup_close', 15 );
 
-//Remove the footer from normal location
-remove_action( 'genesis_footer', 'genesis_footer_markup_open', 5 );
-remove_action( 'genesis_footer', 'genesis_do_footer' );
-remove_action( 'genesis_footer', 'genesis_footer_markup_close', 15 );
-
-// Move footer into content-sidebar-wrap
-add_action( 'genesis_after_content', 'genesis_footer_markup_open', 5 );
-add_action( 'genesis_after_content', 'genesis_do_footer' );
-add_action( 'genesis_after_content', 'genesis_footer_markup_close', 15 );
-
