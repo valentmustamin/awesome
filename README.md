@@ -4,6 +4,11 @@ new-equilibre
 Theme for Personal Blog, based on Clarothemes' Equilibre Theme.
 Equilibre is a Genesis Child Theme
 
+Theme Name: New Equilibre
+Theme URI: https://github.com/valentmustamin/new-equilibre
+Description: Clean and responsive child theme created for the Genesis Framework, based on Claro Themes' Equilibre, http://demo.clarothemes.com/equilibre
+Author: Valent Mustamin, Claro Themes
+Author URI: http://mustamin.com/valent
 
 <strong>EQUILIBRE CHILD THEME</strong>
 <a href="http://studiobicker.nl/themes/equilibre">http://studiobicker.nl/themes/equilibre</a>
