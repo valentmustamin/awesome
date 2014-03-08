@@ -545,16 +545,7 @@ Common Classes
 --------------------------------------------- */
 
 .avatar {
-border-radius: 50% 50% 50% 50%;
-transition:All 1s ease;
--webkit-transition:All 1s ease;
--moz-transition:All 1s ease;
--o-transition:All 1s ease;
-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
+	float: left;
 }
 
 .alignleft .avatar {
