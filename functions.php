@@ -143,12 +143,12 @@ add_action( 'genesis_site_title', 'child_seo_site_title' );
  */
 function child_seo_site_title() { 
 
-	echo '<h1 id="title"><span>Valent</span>Mustamin</h1>';
 $email = "valentmustamin@yahoo.com";
 	$size = 96;
 	//$default = "http://example.com/path/to/example/image.jpg";
 	$gravatar = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
 	echo '<img src="' . $gravatar . '" />';	
+	echo '<br><h1 id="title">Valent Mustamin</h1>';
 
 }
 
