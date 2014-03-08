@@ -191,7 +191,7 @@ Thanks to @GaryJ (Gary Jones), you can do that by filtering genesis_attr_content
 add_filter( 'genesis_attr_content', 'custom_attributes_content' );
 
 function custom_attributes_content( $attributes ) {
-  $attributes['id']     = 'main-content-area';
+  $attributes['id']     = 'main-content';
   return $attributes;
 }
 
