@@ -132,6 +132,28 @@ genesis_register_sidebar( array(
 
 
 
+remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+add_action( 'genesis_site_title', 'child_seo_site_title' );
+/**
+ * Remove title, add <span> inbetween Buzz.
+ * Then add title back to header.
+ *
+ * @author Greg Rickaby
+ * @since 1.0.0
+ */
+function child_seo_site_title() { 
+
+	echo '<h1 id="title"><span>Valent</span>Mustamin</h1>';
+$email = "valentmustamin@yahoo.com";
+	$size = 96;
+	//$default = "http://example.com/path/to/example/image.jpg";
+	$gravatar = "http://www.gravatar.com/avatar/" . md5(strtolower(trim($email))) . "?d=" . urlencode($default) . "&s=" . $size;
+	echo '<img src="' . $gravatar . '" />';	
+
+}
+
+
+
 // Force sidebar-content-sidebar layout setting
 add_filter( 'genesis_site_layout', '__genesis_return_sidebar_content' );
  
