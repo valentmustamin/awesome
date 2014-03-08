@@ -1358,17 +1358,17 @@ Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
 .site-footer {
-	background-color: #4E5E67;
+	background-color: #ffffff;
 	color: #86949C;
 	font-size: 14px;
 	font-size: 1.4rem;
 	padding: 20px 0;
 	padding: 2rem 0;
-	text-align: center;
+	text-align: left;
 }
 
 .site-footer a:hover {
-	color: #fff;
+	color: #cccccc;
 	text-decoration: none;
 }
 
