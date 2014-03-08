@@ -205,9 +205,8 @@ depending on what user interaction and to repeat what chunk of code while repeat
 function custom_infinite_scroll() {
 
   add_theme_support( 'infinite-scroll', array(
-      'container'  => 'main-content-area',
+      'container'  => 'main-content',
       'footer'     => false,
-      'type'       => 'click',
       'render'    => 'genesis_do_loop',
   ) );
 }
