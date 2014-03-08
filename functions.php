@@ -132,20 +132,27 @@ genesis_register_sidebar( array(
 
 
 
-/** Remove Header */
-//remove_action( 'genesis_header', 'genesis_do_header' );
-
-/** Remove Title & Description */
-//remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
-//remove_action( 'genesis_site_description', 'genesis_seo_site_description' );
+// Force sidebar-content-sidebar layout setting
+add_filter( 'genesis_site_layout', '__genesis_return_sidebar_content_sidebar' );
+ 
+// Unregister layout settings
+genesis_unregister_layout( 'sidebar-content' );
+genesis_unregister_layout( 'content-sidebar' );
+genesis_unregister_layout( 'content-sidebar-sidebar' );
+genesis_unregister_layout( 'sidebar-sidebar-content' );
+genesis_unregister_layout( 'full-width-content' );
+ 
+// Unregister and remove markup for sidebar-primary
+unregister_sidebar( 'sidebar' );
+remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
 
 //Remove the header from normal location
 remove_action( 'genesis_header', 'genesis_header_markup_open', 5 );
 remove_action( 'genesis_header', 'genesis_do_header' );
 remove_action( 'genesis_header', 'genesis_header_markup_close', 15 );
-
+ 
 // Move header into into content-sidebar-wrap
-add_action( 'genesis_before_content', 'genesis_header_markup_open', 5 );
-add_action( 'genesis_before_content', 'genesis_do_header' );
-add_action( 'genesis_before_content', 'genesis_header_markup_close', 15 );
+add_action( 'genesis_before_sidebar', 'genesis_header_markup_open', 5 );
+add_action( 'genesis_before_sidebar', 'genesis_do_header' );
+add_action( 'genesis_before_sidebar', 'genesis_header_markup_close', 15 );
 
