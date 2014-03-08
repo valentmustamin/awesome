@@ -132,7 +132,7 @@ genesis_register_sidebar( array(
 
 
 /** Remove Header */
-remove_action( 'genesis_header', 'genesis_do_header' );
+//remove_action( 'genesis_header', 'genesis_do_header' );
 
 /** Remove Title & Description */
 remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
